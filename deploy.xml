@@ -1,6 +1,7 @@
 ---
 - name: Déployer une application Angular avec Nginx
-  hosts: all
+  #hosts: all : ici un seul serveur , mais mieux de passer par un groupe dédié au service a rendre
+  hosts: webservers  # Cible le groupe "webservers"
   become: yes
   vars:
     app_repo: "https://github.com/OpenClassrooms-Student-Center/G-rez-l-int-gration-continue-avec-Git-et-scripts-Application-Angular.git"
