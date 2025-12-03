@@ -1,12 +1,10 @@
 ---
 - name: Déployer une application Angular avec Nginx
-  #hosts: all : ici un seul serveur , mais mieux de passer par un groupe dédié au service a rendre
-  hosts: webservers  # Cible le groupe "webservers"
+  hosts: webservers
   become: yes
   vars:
     app_repo: "https://github.com/OpenClassrooms-Student-Center/G-rez-l-int-gration-continue-avec-Git-et-scripts-Application-Angular.git"
     app_dir: "/opt/angular-app"
-    nginx_config_src: "{{ app_dir }}/nginx/nginx.conf"
     nginx_config_dest: "/etc/nginx/sites-available/angular-app"
     nginx_config_symlink: "/etc/nginx/sites-enabled/angular-app"
 
@@ -30,15 +28,23 @@
         state: present
 
     - name: Builder l'application Angular
-      command: npm run build --prod
+      command: npm run build --prod 
       args:
         chdir: "{{ app_dir }}"
+      environment:
+        NODE_OPTIONS: "--max-old-space-size=2048"
 
-    - name: Déployer la configuration Nginx
+    # NOUVELLE TÂCHE : Déployer la configuration Nginx corrigée 
+    # Dec 02 17:27:01 ip-172-31-34-55 nginx[9191]: 2025/12/02 17:27:01 
+    # [emerg] 9191#9191: "worker_processes" directive is not allowed h>
+
+    - name: Déployer la configuration Nginx pour Angular
       copy:
-        src: "{{ nginx_config_src }}"
+        src: fix-nginx/angular-app  # Chemin relatif depuis le playbook (dans OC_P6_Ansible)
         dest: "{{ nginx_config_dest }}"
-        remote_src: yes
+        owner: root
+        group: root
+        mode: "0644"
       notify: Redémarrer Nginx
 
     - name: Activer la configuration Nginx
