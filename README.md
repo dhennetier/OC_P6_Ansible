@@ -42,6 +42,18 @@ all:
    - Nombreux plantages ou machine figée pendant déploiement
    - passage sur region Paris mais pas d amélioration significatives
    - Playbook a jouer avant : [setup_swap.yml](./setup_swap.yml)
+  **Etapes principales**
+```bash
+- name: Configurer un fichier swap de 2 Go
+    - name: Désactiver le swap existant (si présent)
+    - name: Supprimer l'ancien fichier swap (si présent)
+    - name: Créer un nouveau fichier swap de 2 Go
+    - name: Définir les permissions du fichier swap
+    - name: Formater le fichier swap
+    - name: Activer le fichier swap
+    - name: Ajouter le swap au fstab pour le rendre persistant
+```
+
 5. **Fix NGNIX  : fichier nginix.cfg adapté**
       - alias DNS se l eIP publique sur olympics.openmindx.fr ( Domaine perso sur Scaleway ) 
   
