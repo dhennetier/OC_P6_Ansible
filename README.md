@@ -19,4 +19,19 @@
     - "ec2-35-180-1-165.eu-west-3.compute.amazonaws.com"
   - "ssh -i ~/.ssh/aws_${aws_key_pair.generated_key.key_name}.pem ubuntu@${aws_eip.my_eip.public_dns}"
     - "ssh -i ~/.ssh/aws_openclassrooms_devops_p6.pem ubuntu@ec2-35-180-1-165.eu-west-3.compute.amazonaws.com" 
-   
+
+3. ** Inventaire Ansible format yaml
+   - un seul serveur dans l'inventaire , serveur web syr AWS
+   ```bash
+   └─$ cat hosts.yml
+   all:
+     children:
+       webservers:  # Groupe pour les serveurs web : un seul serveur ici mais prévoyons ...
+         hosts:
+           # eip: public dns
+           ec2-35-180-1-165.eu-west-3.compute.amazonaws.com:
+             ansible_user: ubuntu
+             ansible_ssh_private_key_file: ~/.ssh/aws_openclassrooms_devops_p6.pem
+             ansible_python_interpreter: /usr/bin/python3.12
+       #Anticiper d'autres serveurs en répartissant en groupe
+   ``` 
