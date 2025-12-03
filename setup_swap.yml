@@ -1,0 +1,34 @@
+---
+- name: Configurer un fichier swap de 2 Go
+  hosts: all
+  become: yes
+  tasks:
+    - name: Désactiver le swap existant (si présent)
+      command: swapoff -a
+      ignore_errors: yes
+
+    - name: Supprimer l'ancien fichier swap (si présent)
+      file:
+        path: /swapfile
+        state: absent
+
+    - name: Créer un nouveau fichier swap de 2 Go
+      command: fallocate -l 2G /swapfile
+
+    - name: Définir les permissions du fichier swap
+      file:
+        path: /swapfile
+        mode: "0600"
+
+    - name: Formater le fichier swap
+      command: mkswap /swapfile
+
+    - name: Activer le fichier swap
+      command: swapon /swapfile
+
+    - name: Ajouter le swap au fstab pour le rendre persistant
+      lineinfile:
+        path: /etc/fstab
+        line: "/swapfile none swap sw 0 0"
+        state: present
+
