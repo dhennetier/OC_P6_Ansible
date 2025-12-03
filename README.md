@@ -21,8 +21,9 @@
     - "ssh -i ~/.ssh/aws_openclassrooms_devops_p6.pem ubuntu@ec2-35-180-1-165.eu-west-3.compute.amazonaws.com" 
 
 3. ** Inventaire Ansible format yaml
-   - un seul serveur dans l'inventaire , serveur web syr AWS
-   ```bash
+   - un seul serveur dans l'inventaire , serveur web sur AWS
+   - Référencé par le aws_eip.my_eip.public_dns :ec2-35-180-1-165.eu-west-3.compute.amazonaws.com
+   ```json
    └─$ cat hosts.yml
    all:
      children:
@@ -34,4 +35,15 @@
              ansible_ssh_private_key_file: ~/.ssh/aws_openclassrooms_devops_p6.pem
              ansible_python_interpreter: /usr/bin/python3.12
        #Anticiper d'autres serveurs en répartissant en groupe
-   ``` 
+   ```
+
+   4. **Problème sur VM micro**
+
+   5. **Fix NGNIX  : fichier nginix.cfg adapté**
+      - alias DNS se l eIP publique sur olympics.openmindx.fr ( Domaine perso sur Scaleway ) 
+  
+   7. ** Deploiement Application : deploy.yml**
+  
+   8. **Test Application : olympics.openmindx.fr**
+    
+  
