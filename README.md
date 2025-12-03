@@ -23,7 +23,8 @@
 3. ** Inventaire Ansible format yml : hosts.yml**
    - un seul serveur dans l'inventaire , serveur web sur AWS : fichier 
    - Référencé par le aws_eip.my_eip.public_dns :ec2-35-180-1-165.eu-west-3.compute.amazonaws.com
-
+     
+   - [hosts.yml](.hosts.yml)
 ```json
 all:
   children:
@@ -37,7 +38,10 @@ all:
 ```
 
 4. **Problème sur VM micro**
-
+   - Les ressource mmémoire sous dimesionnée sur l offre gratuite : t".micro
+   - Nombreux plantages ou machine figée pendant déploiement
+   - passage sur region Paris mais pas d amélioration significatives
+   - Playbook a jouer avant : [setup_swap.yml](./setup_swap.yml)
 5. **Fix NGNIX  : fichier nginix.cfg adapté**
       - alias DNS se l eIP publique sur olympics.openmindx.fr ( Domaine perso sur Scaleway ) 
   
