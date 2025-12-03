@@ -20,11 +20,10 @@
   - "ssh -i ~/.ssh/aws_${aws_key_pair.generated_key.key_name}.pem ubuntu@${aws_eip.my_eip.public_dns}"
     - "ssh -i ~/.ssh/aws_openclassrooms_devops_p6.pem ubuntu@ec2-35-180-1-165.eu-west-3.compute.amazonaws.com" 
 
-3. ** Inventaire Ansible format yaml
-   - un seul serveur dans l'inventaire , serveur web sur AWS
+3. ** Inventaire Ansible format yml : hosts.yml**
+   - un seul serveur dans l'inventaire , serveur web sur AWS : fichier 
    - Référencé par le aws_eip.my_eip.public_dns :ec2-35-180-1-165.eu-west-3.compute.amazonaws.com
    ```json
-   └─$ cat hosts.yml
    all:
      children:
        webservers:  # Groupe pour les serveurs web : un seul serveur ici mais prévoyons ...
