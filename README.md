@@ -23,7 +23,8 @@
 3. ** Inventaire Ansible format yml : hosts.yml**
    - un seul serveur dans l'inventaire , serveur web sur AWS : fichier 
    - Référencé par le aws_eip.my_eip.public_dns :ec2-35-180-1-165.eu-west-3.compute.amazonaws.com
-   ```json
+
+```json
 all:
   children:
     webservers:  # Groupe pour les serveurs web : un seul serveur ici mais prévoyons ...
@@ -33,7 +34,7 @@ all:
           ansible_user: ubuntu
           ansible_ssh_private_key_file: ~/.ssh/aws_openclassrooms_devops_p6.pem
           ansible_python_interpreter: /usr/bin/python3.12
-   ```
+```
 
 4. **Problème sur VM micro**
 
