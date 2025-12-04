@@ -85,7 +85,7 @@
   ```
 
 8. **Test Application : olympics-gcp.openmindx.fr**
-   - :accessibility: Si tout est OK le site répond sur le navigateur à l'URL : **`http://olympics-gcp.openmindx.fr`  ** 
-   - *Lien : [http://olympics-gcp.openmindx.fr](http://olympics-gcp.openmindx.fr)*
+   - :accessibility: Si tout est OK le site répond sur le navigateur à l'URL : **`https://olympics-gcp.openmindx.fr`** 
+   - *Lien : [https://olympics-gcp.openmindx.fr](https://olympics-gcp.openmindx.fr)*
      
        ![Capture d'écran du site Olympics-gcp](images/olympics-gcp_openmindx_fr.png)
