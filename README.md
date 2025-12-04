@@ -65,7 +65,7 @@ all:
    ```
   - Fix Nginx : [fix-nginx/angular-app](./fix-nginx/angular-app)
      - appliquer dans le playbook deploy.yml
-     - en particulier la clause `server_name olympics.openmindx.fr;`
+     - en particulier la clause **`server_name olympics.openmindx.fr;`**
 
 6. **Deploiement Application : deploy.yml**
    - Construction et déploiement du site sur la VM aws
