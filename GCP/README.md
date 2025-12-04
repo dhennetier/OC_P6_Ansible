@@ -1,7 +1,8 @@
-Objectifs sur GCP : 
+# OC_P6_Ansible  Objectifs sur GCP : 
 
-0. Prerequis 
-ssh-keygen -t ed25519 -f ~/.ssh/id_ocp6exo2gcp -C "daniel@ocp6exo2gcp"
+0. **Prerequis** 
+  - sur WSL sur PC avec le compte daniel
+  - ssh-keygen -t ed25519 -f ~/.ssh/id_ocp6exo2gcp -C "daniel@ocp6exo2gcp"
 Compte de service IAM sur Console Google : 
 ficheir json :  serious-unison-334521-ef79fa28b8b0.json
 
