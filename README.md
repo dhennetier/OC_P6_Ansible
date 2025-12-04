@@ -1,5 +1,5 @@
 # OC_P6_Ansible
-## Clé d accès générée pour le compte ocp6-terrafom avec role limité à EC2 
+## Clé d accès AWS générée pour le compte ocp6-terrafom avec role limité à EC2 
 
 1. **VM fournit par AWS via TERRAFORM**
    - resource "aws_instance" "my_server" 
