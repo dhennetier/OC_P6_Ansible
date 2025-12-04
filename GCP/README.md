@@ -15,22 +15,24 @@
    - Ports ouverts : 22 (SSH), 80 (HTTP), 443 (HTTPS)
    - Clé SSH pour connexion depuis PC local
 
-Fichiers :  
-- [main.tf](./main.tf)
-- [variables.tf](./variables.tf) 
+Fichiers concernés dans le répertoire GCP :  
+   - [main.tf](./main.tf)
+   - [variables.tf](./variables.tf) 
 
 
 2. **DNS : ajouter entre IP publique sur Domaine** 
-Domaine openmindx.fr 
-Console Scaleway pour ajouter alias DNS  vers 
-   IP publique sur olympics-gcp.openmindx.fr : 34.155.216.222
+   - Domaine openmindx.fr 
+   - Console Scaleway pour ajouter alias DNS  vers 
+     -  IP publique sur olympics-gcp.openmindx.fr : 34.155.216.222
 
-Attendre la propagation DNS  , peut etre un eu long ( 15minutes mini )
-vérifier par la commande dig : 	dig olympics-gcp.openmindx.fr
-ANSWER attendu  : 
-    ;; ANSWER SECTION:
-    olympics-gcp.openmindx.fr. 3303 IN      A       34.155.216.222
-
+   - Attendre la propagation DNS  , peut etre un eu long ( 15minutes mini )
+     - vérifier par la commande dig :
+     ```bash
+        dig olympics-gcp.openmindx.fr
+        #ANSWER attendu  : 
+        ;; ANSWER SECTION:
+        olympics-gcp.openmindx.fr. 3303 IN      A       34.155.216.222
+     ```
 
 3. **Ansible** 
 Déploiement de la l'application dans une image Docker
