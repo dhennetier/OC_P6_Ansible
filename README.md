@@ -91,5 +91,5 @@ all:
 ```   
    
 8. **Test Application : olympics.openmindx.fr**
-    
+   - Si tout est OK le site réponnd sur le navigateur à l'URL : **`http://olympics.openmindx.fr`**
   
