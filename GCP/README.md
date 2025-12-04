@@ -6,7 +6,7 @@
   - Compte de service IAM sur Console Google : 
     - ficheir json :  serious-unison-334521-ef79fa28b8b0.json
 
-1. **Terraform : VM a provisionner sur GCP ** 
+1. **Terraform : VM a provisionner sur GCP** 
    - Nom de la VM : ocp6exo2gcp
    - Région : europe-west9 (Paris)
    - Type de machine : E2 customisée (2 vCPU, 4 Go de RAM)
@@ -26,7 +26,7 @@ Fichiers concernés dans le répertoire GCP :
      -  IP publique sur olympics-gcp.openmindx.fr : 34.155.216.222
 
    - Attendre la propagation DNS  , peut etre un eu long ( 15minutes mini )
-     - vérifier par la commande dig :
+     - vérifier par la commande dig sur PC / WSL:
      ```bash
         dig olympics-gcp.openmindx.fr
         #ANSWER attendu  : 
