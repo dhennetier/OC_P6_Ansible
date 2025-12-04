@@ -6,19 +6,19 @@
 Compte de service IAM sur Console Google : 
 ficheir json :  serious-unison-334521-ef79fa28b8b0.json
 
-1. Terraform 
-Nom de la VM : ocp6exo2gcp
-Région : europe-west9 (Paris)
-Type de machine : E2 customisée (2 vCPU, 4 Go de RAM)
-Disque : 15 Go, OS Ubuntu 24.04 LTS minimal
-IP fixe publique
-Ports ouverts : 22 (SSH), 80 (HTTP), 443 (HTTPS)
-Clé SSH pour connexion depuis PC local
+1. **Terraform** 
+   - Nom de la VM : ocp6exo2gcp
+   - Région : europe-west9 (Paris)
+   - Type de machine : E2 customisée (2 vCPU, 4 Go de RAM)
+   - Disque : 15 Go, OS Ubuntu 24.04 LTS minimal
+   - IP fixe publique
+   - Ports ouverts : 22 (SSH), 80 (HTTP), 443 (HTTPS)
+   - Clé SSH pour connexion depuis PC local
 
 Fichiers :  ./main.tf et variables.tf 
 
 
-2. DNS : ajouter entre IP publique sur Domaine 
+2. **DNS : ajouter entre IP publique sur Domaine** 
 Domaine openmindx.fr 
 Console Scaleway pour ajouter alias DNS  vers 
    IP publique sur olympics-gcp.openmindx.fr : 34.155.216.222
@@ -30,22 +30,22 @@ ANSWER attendu  :
     olympics-gcp.openmindx.fr. 3303 IN      A       34.155.216.222
 
 
-3. Ansible 
+3. **Ansible** 
 Déploiement de la l'application dans une image Docker
 lancement de l'application 
 Serveur_name : olympics-gcp.openmindx.fr 
 
-4. Test du site sur navigateur pc : 
+4. **Test du site sur navigateur pc :** 
     http://olympics-gcp.openmindx.fr
 
-5. Ajout certificat pour sésuriser
+5. **Ajout certificat pour sésuriser**
 
     Test du site sur navigateur pc : 
     https://olympics-gcp.openmindx.fr
 
 ssh -i ~/.ssh/id_ocp6exo2gcp daniel@34.155.216.222
 
-6. Commandes utiles 
+6. **Commandes utiles** 
   - Connexion sur la VP GCP 
     - ssh -i ~/.ssh/id_ocp6exo2gcp daniel@34.155.216.222
     - sudo nginx -t
