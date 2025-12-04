@@ -45,14 +45,12 @@
         owner: root
         group: root
         mode: "0644"
-      notify: Redémarrer Nginx
 
     - name: Activer la configuration Nginx
       file:
         src: "{{ nginx_config_dest }}"
         dest: "{{ nginx_config_symlink }}"
         state: link
-      notify: Redémarrer Nginx
 
     - name: Supprimer la configuration par défaut de Nginx
       file:
