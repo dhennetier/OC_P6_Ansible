@@ -56,15 +56,39 @@ all:
    ```
 
 5. **Fix NGNIX  : fichier nginix.cfg adapté**
-      - alias DNS sur Elastic IP publique sur olympics.openmindx.fr ( Domaine perso sur Scaleway )
-```bash
-┌──(daniel㉿LAPTOP-CMCF5R42:)-[/mnt/c/Users/danie/OC-ED-P6/OC_P6_Ansible]
-└─$ dig olympics.openmindx.fr | grep -i olympics
-   ; <<>> DiG 9.18.39-0ubuntu0.24.04.2-Ubuntu <<>> olympics.openmindx.fr
-   **olympics.openmindx.fr.  3600    IN      A       35.180.1.165**
-```
-7. ** Deploiement Application : deploy.yml**
-  
+   - alias DNS sur Elastic IP publique sur olympics.openmindx.fr ( Domaine perso sur Scaleway )
+   ```bash
+   ┌──(daniel㉿LAPTOP-CMCF5R42:)-[/mnt/c/Users/danie/OC-ED-P6/OC_P6_Ansible]
+   └─$ dig olympics.openmindx.fr | grep -i olympics
+      ; <<>> DiG 9.18.39-0ubuntu0.24.04.2-Ubuntu <<>> olympics.openmindx.fr
+      **olympics.openmindx.fr.  3600    IN      A       35.180.1.165**
+   ```
+  - Fix Nginx : [fix-nginx/angular-app](./fix-nginx/angular-app)
+     - appliquer dans le playbook deploy.yml 
+
+6. ** Deploiement Application : deploy.yml**
+   - Construction et déploiement du site sur la VM aws
+   -  [deploy.yml](./deploy.yml)
+   - **Principales étapes :**
+     ```bash
+   ┌──(daniel㉿LAPTOP-CMCF5R42:)-[/mnt/c/Users/danie/OC-ED-P6/OC_P6_Ansible]
+   └─$ egrep 'tasks|handlers|notify|name' deploy.yml
+   - name: Déployer une application Angular avec Nginx
+     tasks:
+       - name: Installer les dépendances système
+           name: ["nodejs", "npm", "git", "nginx"]
+       - name: Cloner le dépôt Angular
+       - name: Installer les dépendances Node.js
+       - name: Builder l'application Angular
+       - name: Déployer la configuration Nginx pour Angular
+       - name: Activer la configuration Nginx
+       - name: Supprimer la configuration par défaut de Nginx
+         notify: Redémarrer Nginx
+     handlers:
+       - name: Redémarrer Nginx
+           name: nginx 
+     ```   
+   
 8. **Test Application : olympics.openmindx.fr**
     
   
