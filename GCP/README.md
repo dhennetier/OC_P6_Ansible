@@ -34,22 +34,25 @@ Fichiers concernés dans le répertoire GCP :
         olympics-gcp.openmindx.fr. 3303 IN      A       34.155.216.222
      ```
 
-3. **Ansible** 
-Déploiement de la l'application dans une image Docker
-lancement de l'application 
-Serveur_name : olympics-gcp.openmindx.fr 
+3. **Ansible : Build et deploy ** 
+   - Déploiement de la l'application dans une image Docker
+   - lancement de l'application sur ngin
+       - Serveur_name : olympics-gcp.openmindx.fr 
 
 4. **Test du site sur navigateur pc :** 
-    http://olympics-gcp.openmindx.fr
+   -  http://olympics-gcp.openmindx.fr
 
 5. **Ajout certificat pour sésuriser**
+    ```bash
+    ssh -i ~/.ssh/id_ocp6exo2gcp daniel@34.155.216.222
+       sudo apt install certbot python3-certbot-nginx -y
+       sudo certbot --nginx -d olympics_gcp.openmindx.fr
+    ```bash
+   - Test du site sur navigateur pc : 
+     - `https://olympics-gcp.openmindx.fr`
 
-    Test du site sur navigateur pc : 
-    https://olympics-gcp.openmindx.fr
 
-ssh -i ~/.ssh/id_ocp6exo2gcp daniel@34.155.216.222
-
-6. **Commandes utiles** 
+7. **Commandes utiles** 
   - Connexion sur la VP GCP 
     - ssh -i ~/.ssh/id_ocp6exo2gcp daniel@34.155.216.222
     - sudo nginx -t
@@ -80,4 +83,8 @@ ssh -i ~/.ssh/id_ocp6exo2gcp daniel@34.155.216.222
      tcp   LISTEN 0      511            0.0.0.0:443       0.0.0.0:*    users:(("nginx",pid=9562,fd=12),("nginx",pid=9561,fd=12),("ngin",pid=9409,fd=12))
      tcp   LISTEN 0      511            0.0.0.0:80        0.0.0.0:*    users:(("nginx",pid=9562,fd=5),("nginx",pid=9561,fd=5),("nginx",pid=9409,fd=5))
   ```
-
+8. **Test Application : olympics-gsp.openmindx.fr**
+   - :accessibility: Si tout est OK le site répond sur le navigateur à l'URL : **`http://olympics-gcp.openmindx.fr`  ** 
+   - *Lien : [http://olympics-gcp.openmindx.fr](http://olympics-gcp.openmindx.fr)*
+     
+       ![Capture d'écran du site Olympics-gcp](images/olympics-gcp_openmindx_fr.png)
