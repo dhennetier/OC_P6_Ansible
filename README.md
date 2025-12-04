@@ -66,11 +66,11 @@ all:
   - Fix Nginx : [fix-nginx/angular-app](./fix-nginx/angular-app)
      - appliquer dans le playbook deploy.yml 
 
-6. ** Deploiement Application : deploy.yml**
+6. **Deploiement Application : deploy.yml**
    - Construction et déploiement du site sur la VM aws
    -  [deploy.yml](./deploy.yml)
    - **Principales étapes :**
-     ```bash
+```bash
    ┌──(daniel㉿LAPTOP-CMCF5R42:)-[/mnt/c/Users/danie/OC-ED-P6/OC_P6_Ansible]
    └─$ egrep 'tasks|handlers|notify|name' deploy.yml
    - name: Déployer une application Angular avec Nginx
@@ -87,7 +87,7 @@ all:
      handlers:
        - name: Redémarrer Nginx
            name: nginx 
-     ```   
+```   
    
 8. **Test Application : olympics.openmindx.fr**
     
