@@ -97,4 +97,4 @@ all:
        ![Capture d'écran du site Olympics](images/olympics_openmindx_fr.png)
 
 :cool:
-*Lien : [Smartd Icons utilisés ici ](https://github.com/ikatyang/emoji-cheat-sheet?tab=readme-ov-file#github-custom-emoji) 
+*Lien : [Smartd Icons utilisés ici ](https://github.com/ikatyang/emoji-cheat-sheet?tab=readme-ov-file#github-custom-emoji)* 
