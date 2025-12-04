@@ -38,10 +38,10 @@ all:
 ```
 
 4. **Problème sur VM micro**
-   - Les ressource mmémoire sous dimesionnée sur l offre gratuite : t".micro
+   - Ressource mémoire sous dimesionnée sur l offre gratuite : t3.micro
    - Nombreux plantages ou machine figée pendant déploiement
-   - passage sur region Paris mais pas d amélioration significatives
-   - Playbook a jouer avant : [setup_swap.yml](./setup_swap.yml)
+      - passage sur region Paris mais pas d amélioration significatives
+      - Ajout Fic 2Go Swap : Playbook a jouer avant : [setup_swap.yml](./setup_swap.yml)
 
    **Etapes principales**
    ```bash
@@ -71,7 +71,7 @@ all:
    - Construction et déploiement du site sur la VM aws
    -  [deploy.yml](./deploy.yml)
    - **Principales étapes :**
-```bash
+```yaml
    ┌──(daniel㉿LAPTOP-CMCF5R42:)-[/mnt/c/Users/danie/OC-ED-P6/OC_P6_Ansible]
    └─$ egrep 'tasks|handlers|notify|name' deploy.yml
    - name: Déployer une application Angular avec Nginx
