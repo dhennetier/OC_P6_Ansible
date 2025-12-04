@@ -1,12 +1,12 @@
-# OC_P6_Ansible : Deployer l application angular sur une VM sur GCP : 
+# OC_P6_Ansible : Deployer l'application angular sur une VM sur GCP: 
 
 0. **Prerequis** 
   - sur WSL sur PC avec le compte daniel
-  - ssh-keygen -t ed25519 -f ~/.ssh/id_ocp6exo2gcp -C "daniel@ocp6exo2gcp"
-  - Compte de service IAM sur Console Google : 
-    - ficheir json :  serious-unison-334521-ef79fa28b8b0.json
+    - ssh-keygen -t ed25519 -f ~/.ssh/id_ocp6exo2gcp -C "daniel@ocp6exo2gcp"
+    - Compte de service IAM sur Console Google : 
+      - ficheir json :  serious-unison-334521-ef79fa28b8b0.json
 
-1. **Terraform : VM a provisionner sur GCP** 
+1. **Terraform : VM a provisionner sur GCP avec ces informations** 
    - Nom de la VM : ocp6exo2gcp
    - Région : europe-west9 (Paris)
    - Type de machine : E2 customisée (2 vCPU, 4 Go de RAM)
@@ -15,7 +15,7 @@
    - Ports ouverts : 22 (SSH), 80 (HTTP), 443 (HTTPS)
    - Clé SSH pour connexion depuis PC local
 
-Fichiers concernés dans le répertoire GCP :  
+`Fichiers concernés dans le répertoire GCP :`  
    - [main.tf](./main.tf)
    - [variables.tf](./variables.tf) 
 
