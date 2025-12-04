@@ -38,10 +38,10 @@ all:
 ```
 
 4. **Problème sur VM micro**
-   - Ressource mémoire sous dimesionnée sur l offre gratuite : t3.micro
-   - Nombreux plantages ou machine figée pendant déploiement
+   - :red_circle: Ressource mémoire sous dimesionnée sur l offre gratuite : t3.micro
+   - :red_circle: Nombreux plantages ou machine figée pendant déploiement
       - passage sur region Paris mais pas d amélioration significatives
-      - Ajout Fic 2Go Swap : Playbook a jouer avant : [setup_swap.yml](./setup_swap.yml)
+      - :green_circle: Ajout Fic 2Go Swap : Playbook a jouer avant : [setup_swap.yml](./setup_swap.yml)
 
    **Etapes principales**
    ```yaml
@@ -89,7 +89,7 @@ all:
        - name: Redémarrer Nginx
            name: nginx 
 ```   
-:fr:   
+ 
 8. **Test Application : olympics.openmindx.fr**
    - :accessibility: Si tout est OK le site répond sur le navigateur à l'URL : **`http://olympics.openmindx.fr`  ** 
    - *Lien : [http://olympics.openmindx.fr](http://olympics.openmindx.fr)*
