@@ -47,7 +47,7 @@ Fichiers concernés dans le répertoire GCP :
     ssh -i ~/.ssh/id_ocp6exo2gcp daniel@34.155.216.222
        sudo apt install certbot python3-certbot-nginx -y
        sudo certbot --nginx -d olympics_gcp.openmindx.fr
-    ```bash
+    ```
    - Test du site sur navigateur pc : 
      - `https://olympics-gcp.openmindx.fr`
 
@@ -83,7 +83,8 @@ Fichiers concernés dans le répertoire GCP :
      tcp   LISTEN 0      511            0.0.0.0:443       0.0.0.0:*    users:(("nginx",pid=9562,fd=12),("nginx",pid=9561,fd=12),("ngin",pid=9409,fd=12))
      tcp   LISTEN 0      511            0.0.0.0:80        0.0.0.0:*    users:(("nginx",pid=9562,fd=5),("nginx",pid=9561,fd=5),("nginx",pid=9409,fd=5))
   ```
-8. **Test Application : olympics-gsp.openmindx.fr**
+
+8. **Test Application : olympics-gcp.openmindx.fr**
    - :accessibility: Si tout est OK le site répond sur le navigateur à l'URL : **`http://olympics-gcp.openmindx.fr`  ** 
    - *Lien : [http://olympics-gcp.openmindx.fr](http://olympics-gcp.openmindx.fr)*
      
