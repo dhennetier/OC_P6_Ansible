@@ -55,7 +55,7 @@ all:
        - name: Ajouter le swap au fstab pour le rendre persistant
    ```
 
-5. **Fix NGNIX  : fichier nginix.cfg adapté**
+5. **Fix NGINX  : fichier nginx.cfg adapté**
    - alias DNS sur Elastic IP publique sur olympics.openmindx.fr ( Domaine perso sur Scaleway )
    ```bash
    ┌──(daniel㉿LAPTOP-CMCF5R42:)-[/mnt/c/Users/danie/OC-ED-P6/OC_P6_Ansible]
@@ -96,4 +96,5 @@ all:
      
        ![Capture d'écran du site Olympics](images/olympics_openmindx_fr.png)
 
- 
+:cool:
+*Lien : [Smartd Icons utilisés ici ](https://github.com/ikatyang/emoji-cheat-sheet?tab=readme-ov-file#github-custom-emoji) 
