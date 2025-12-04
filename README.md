@@ -40,7 +40,7 @@ all:
 4. **Problème sur VM micro**
    - :red_circle: Ressource mémoire sous dimesionnée sur l offre gratuite : t3.micro
    - :red_circle: Nombreux plantages ou machine figée pendant déploiement
-      - passage sur region Paris mais pas d amélioration significatives
+      - :orange_circle: passage sur region Paris mais pas d amélioration significatives
       - :green_circle: Ajout Fic 2Go Swap : Playbook a jouer avant : [setup_swap.yml](./setup_swap.yml)
 
    **Etapes principales**
