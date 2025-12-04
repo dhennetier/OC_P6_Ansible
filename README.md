@@ -25,7 +25,7 @@
    - Référencé par le aws_eip.my_eip.public_dns :ec2-35-180-1-165.eu-west-3.compute.amazonaws.com
      
    - [hosts.yml](.hosts.yml)
-```json
+```yaml
 all:
   children:
     webservers:  # Groupe pour les serveurs web : un seul serveur ici mais prévoyons ...
@@ -44,7 +44,7 @@ all:
       - Ajout Fic 2Go Swap : Playbook a jouer avant : [setup_swap.yml](./setup_swap.yml)
 
    **Etapes principales**
-   ```bash
+   ```yaml
    - name: Configurer un fichier swap de 2 Go
        - name: Désactiver le swap existant (si présent)
        - name: Supprimer l'ancien fichier swap (si présent)
@@ -91,7 +91,7 @@ all:
 ```   
    
 8. **Test Application : olympics.openmindx.fr**
-   - Si tout est OK le site répond sur le navigateur à l'URL : **`http://olympics.openmindx.fr`**
+   - :accessibility: Si tout est OK le site répond sur le navigateur à l'URL : **`http://olympics.openmindx.fr`**
    - *Lien : [http://olympics.openmindx.fr](http://olympics.openmindx.fr)*
      
        ![Capture d'écran du site Olympics](images/olympics_openmindx_fr.png)
