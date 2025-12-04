@@ -64,7 +64,8 @@ all:
       **olympics.openmindx.fr.  3600    IN      A       35.180.1.165**
    ```
   - Fix Nginx : [fix-nginx/angular-app](./fix-nginx/angular-app)
-     - appliquer dans le playbook deploy.yml 
+     - appliquer dans le playbook deploy.yml
+     - en particulier la clause `server_name olympics.openmindx.fr;`
 
 6. **Deploiement Application : deploy.yml**
    - Construction et déploiement du site sur la VM aws
