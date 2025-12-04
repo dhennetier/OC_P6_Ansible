@@ -20,7 +20,7 @@
   - "ssh -i ~/.ssh/aws_${aws_key_pair.generated_key.key_name}.pem ubuntu@${aws_eip.my_eip.public_dns}"
     - "ssh -i ~/.ssh/aws_openclassrooms_devops_p6.pem ubuntu@ec2-35-180-1-165.eu-west-3.compute.amazonaws.com" 
 
-3. ** Inventaire Ansible format yml : hosts.yml**
+3. **Inventaire Ansible format yml : hosts.yml**
    - un seul serveur dans l'inventaire , serveur web sur AWS : fichier 
    - Référencé par le aws_eip.my_eip.public_dns :ec2-35-180-1-165.eu-west-3.compute.amazonaws.com
      
@@ -56,8 +56,13 @@ all:
    ```
 
 5. **Fix NGNIX  : fichier nginix.cfg adapté**
-      - alias DNS se l eIP publique sur olympics.openmindx.fr ( Domaine perso sur Scaleway ) 
-  
+      - alias DNS sur Elastic IP publique sur olympics.openmindx.fr ( Domaine perso sur Scaleway )
+```bash
+┌──(daniel㉿LAPTOP-CMCF5R42:)-[/mnt/c/Users/danie/OC-ED-P6/OC_P6_Ansible]
+└─$ dig olympics.openmindx.fr | grep -i olympics
+   ; <<>> DiG 9.18.39-0ubuntu0.24.04.2-Ubuntu <<>> olympics.openmindx.fr
+   **olympics.openmindx.fr.  3600    IN      A       35.180.1.165**
+```
 7. ** Deploiement Application : deploy.yml**
   
 8. **Test Application : olympics.openmindx.fr**
