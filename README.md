@@ -91,7 +91,7 @@ all:
 ```   
  
 8. **Test Application : olympics.openmindx.fr**
-   - :accessibility: Si tout est OK le site répond sur le navigateur à l'URL : **`http://olympics.openmindx.fr`  ** 
+   - :accessibility: Si tout est OK le site répond sur le navigateur à l'URL : **`http://olympics.openmindx.fr`** 
    - *Lien : [http://olympics.openmindx.fr](http://olympics.openmindx.fr)*
      
        ![Capture d'écran du site Olympics](images/olympics_openmindx_fr.png)
